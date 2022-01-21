@@ -1,19 +1,16 @@
 # content=$(curl https://primes.utm.edu/lists/small/10000.txt)
-col1=$(curl https://primes.utm.edu/lists/small/10000.txt | awk '{print s+=$1}')
-# col1=$(curl https://primes.utm.edu/lists/small/10000.txt | awk '{s+=$1}' END '{print s}')
+col1=$(curl https://primes.utm.edu/lists/small/10000.txt | awk '{Total1=Total1+=$1} END{print "Total for col1 is: " Total1}')
+col2=$(curl https://primes.utm.edu/lists/small/10000.txt | awk '{Total2=Total2+=$2} END{print "Total for col2 is: " Total2}')
 
+# TODO: wrap in thread1
 while read col1
 do
     echo $col1
 done < "$col1"
 
-# function main() {
-#     for i in $col1; do
-#         if [[$i == ?[0-9]]; then
-#             echo $i
-#         else
-#             echo "$i is an integer" 
-#         fi
-#     done
-# }
-# main
+# TODO: wrap in thread2
+while read col2
+do
+    echo $col2
+done < "$col2"
+
