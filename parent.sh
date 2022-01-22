@@ -11,8 +11,8 @@
 
 # for ((i=0;i<11;i++))
 
-retn_value=$(sh child.sh "${column_0[1]}")
-
+retn_value=$(sh child.sh)
+echo $retn_value
 # for i in $retn_value; do
 #     echo $i
 # done
