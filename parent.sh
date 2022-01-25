@@ -1,18 +1,10 @@
 #!  /bin/bash 
-#content=$(curl https://primes.utm.edu/lists/small/10000.txt)
 
-# function column1() {
-#     col1=$(awk '{Total1=Total1+=$1} END{print "Total for col1 is: " Total1}')
-#     echo $col1 &
-#     echo "started instance num: $i"
-#     pid1=$!
-#     wait $pid1 && echo "pid1 is: $pid1"     
-# }
+output=$(sh child.sh)
+echo $output
 
-# for ((i=0;i<11;i++))
-
-retn_value=$(sh child.sh)
-echo $retn_value
-# for i in $retn_value; do
-#     echo $i
-# done
+# retn_value=$(
+#     for t in ${allThreads[@]}; do
+#         sh child.sh
+#         )
+# echo $retn_value
